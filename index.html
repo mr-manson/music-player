@@ -4,11 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Player</title>
-    <link rel="stylesheet" href="./scss/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="wrapper">
-      <h1>Player</h1>
+      <div class="player">
+        <div class="title">Now Playing</div>
+        <audio class="audio">
+          <source
+            src="https://docs.google.com/uc?id=127OcADSjPhVjmIcElCnTuDg3Cm7NwE9s"
+          />
+        </audio>
+        <div class="cover">
+          <img src="./assets/img/cover.jpg" alt="cover" />
+        </div>
+        <div class="song">Empty</div>
+        <div class="progress__container">
+          <div class="progress"></div>
+        </div>
+        <div class="buttons">
+          <div class="btn prev">
+            <img src="./assets/img/prev.svg" alt="prev" />
+          </div>
+          <div class="btn play">
+            <img class="play-pause" src="./assets/img/play.svg" alt="play" />
+          </div>
+          <div class="btn next">
+            <img src="./assets/img/next.svg" alt="next" />
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="./js/script.js"></script>

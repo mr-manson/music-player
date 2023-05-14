@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e4e9ed;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #eff3f5;
+  border-radius: 30px;
+  max-width: 380px;
+  width: 100%;
+  padding: 25px;
+  box-shadow: 0 0 10px #4b4b4b;
+}
+.player .title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2b3c5b;
+  text-align: center;
+}
+.player .cover {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+.player .cover img {
+  height: 250px;
+  width: 250px;
+  border-radius: 7px;
+}
+.player .song {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #2b3c5b;
+  text-align: center;
+}
+.player .progress__container {
+  display: flex;
+  align-items: center;
+  background: #e4e9ed;
+  border-radius: 5px;
+  margin: 63px 0 0;
+  width: 100%;
+  height: 10px;
+  border: 1px solid #2b3c5b;
+  cursor: pointer;
+}
+.player .progress__container .progress {
+  background: #2b3c5b;
+  border-radius: 5px;
+  height: 6px;
+  width: 150px;
+  margin: 2px;
+}
+.player .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0 0;
+}
+.player .buttons img {
+  height: 50px;
+  width: 50px;
+}
+.player .btn {
+  cursor: pointer;
+}
+.player .btn:not(:last-child) {
+  margin: 0 10px;
+}/*# sourceMappingURL=style.css.map */
