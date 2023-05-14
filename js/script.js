@@ -13,10 +13,10 @@ const player = document.querySelector(".player"),
 
 const songs = ["01 Cycle", "02 Morning", "03 Heart Is a Drum"];
 
-// ============== Default song
+// ============== DEFAULT SONG
 let songIndex = 0;
 
-// ============== Init
+// ============== LOAD TRACK
 const loadSong = (song) => {
   songName.innerHTML = song.slice(3);
   audio.src = `assets/audio/${song}.mp3`;
@@ -24,14 +24,14 @@ const loadSong = (song) => {
 
 loadSong(songs[songIndex]);
 
-// ============== Play
+// ============== PLAY
 const playTrack = () => {
   player.classList.add("play");
   playIcon.src = "./assets/img/pause.svg";
   audio.play();
 };
 
-// ============== Pause
+// ============== PAUSE
 const pauseTrack = () => {
   player.classList.remove("play");
   playIcon.src = "./assets/img/play.svg";
@@ -46,7 +46,7 @@ playBtn.addEventListener("click", () => {
   }
 });
 
-// ============== Next
+// ============== NEXT
 const nextTrack = () => {
   songIndex++;
   if (songIndex > songs.length - 1) {
@@ -58,7 +58,7 @@ const nextTrack = () => {
 
 nextBtn.addEventListener("click", nextTrack);
 
-// ============== Prev
+// ============== PREV
 const prevTrack = () => {
   songIndex--;
   if (songIndex < 0) {
@@ -69,3 +69,27 @@ const prevTrack = () => {
 };
 
 prevBtn.addEventListener("click", prevTrack);
+
+// ============== PROGRESS
+const updateProgress = (e) => {
+  const { duration, currentTime } = e.srcElement;
+  const progressPercent = (currentTime / duration) * 100;
+  progress.style.width = `${progressPercent}%`;
+};
+
+audio.addEventListener("timeupdate", updateProgress);
+
+// ============== SET PROGRESS
+function setProgress(e) {
+  const width = this.clientWidth;
+  const clickPosition = e.offsetX;
+  const duration = audio.duration;
+  audio.currentTime = (clickPosition / width) * duration;
+
+  console.log(duration);
+}
+
+progressContainer.addEventListener("click", setProgress);
+
+// ============== AUTOPLAY
+audio.addEventListener("ended", nextTrack);
